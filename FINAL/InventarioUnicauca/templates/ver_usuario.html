@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+   usuario  
+{% endblock titulo%}
+
+{% block titulomenu %}
+Ver Usuario
+{% endblock titulomenu %}
+
+{% block contenid %}  
+<center>
+		
+	<h1>{{ lista }}</h1>
+</center>
+
+<div class="row justify-content-center">
+    <div class="card col-8">
+                  
+            <div class="col-4">
+                   
+                <p><strong>cedula :</strong> {{ obj.id_cedula }}</p>
+                <p><strong>nombre : </strong>{{ obj.nombre }}</p>
+                <p><strong>codigo : </strong>{{ obj.codigo }}</p>
+                <p><strong>telefono : </strong>{{ obj.telefono }}</p>
+                <p><strong>rol : </strong>{{ obj.rol }}</p>
+                <p><strong>facultad : </strong>{{ obj.facultad }}</p>
+                
+             
+                
+            
+        </div>
+    </div>
+</div>
+<center>
+    
+<a href="{% url 'lista_usuario' %}">Regresar a lista Sala</a>
+</center>
+
+{% endblock contenid%}

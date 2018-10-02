@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin - Login</title>
+
+  <!-- Bootstrap core CSS-->
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+
+  <!-- Custom fonts for this template-->
+  <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+  <link rel="stylesheet" href="{% static 'vendor/fontawesome-free/css/all.min.css' %}">
+
+
+
+  <!-- Page level plugin CSS-->
+  <!-- <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}">
+
+  <!-- Custom styles for this template-->
+  <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="{% static 'vendor/css/sb-admin.css' %}">
+  <link rel="stylesheet" href="../static/css/sb-admin.css">
+</head>
+
+<body id="comple">
+  <div class="navbar bg-dark text-white">
+
+    <a class="navbar-brand" href="#">
+      <img src="{% static '/escudo.png' %}" alt="My image" style="width:2rem; height:2.5rem" class="d-inline-block align-top">
+      <font SIZE=5 style="color:#FFFFFF" face="Sanvito"> Inventario|Unicauca</font>
+    </a>
+  </div>
+
+  {% load static %}
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Inicio Sesion</div>
+      <div class="card-body">
+        <form action="" method="POST">
+          {% csrf_token %} {{ formulario }}
+          <div class="row" style="margin-top: 2rem">
+            <input type="submit" class="btn btn-danger btn-lg btn-block" name="login"  value="Login">
+            
+          </div>
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="register.html">Register an Account</a>
+          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+        </div>
+        <center>                                      
+          <h5 style="color:rgb(221, 24, 24)">{{msj}}</h5>
+        </center>   
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+</body>
+
+</html>

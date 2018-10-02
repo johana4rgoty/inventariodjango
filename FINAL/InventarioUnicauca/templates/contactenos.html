@@ -1,0 +1,31 @@
+
+
+    {% extends "base.html" %}
+    {% block titulo %}
+      Contactenos
+    {% endblock titulo%}
+   
+    {% block contenid%}
+  
+    <div  class="rounded" style="padding:12px; background-color:#ffff; line-height:1.4; margin-left:35rem; width: 50%; height:80%; position: absolute;">
+    <center>
+		<h2  style="color:#cc0606;" >Contactenos</h2>
+    </center>
+   
+        <div class="row justify-content-center">
+            {% if info_enviado %}
+                {{ email }}
+                {{ subject }}
+                {{ text }}
+            {% else %}	
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ formulario.as_p }}
+                    <input  class="btn btn-primary" type="submit" name="Enviar">
+                </form>
+                        
+            {% endif %}
+        </div>
+    </div>    
+ 
+    {% endblock contenid%}

@@ -1,0 +1,25 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+   Perfil  
+{% endblock titulo%}
+
+{% block titulomenu %}
+PERFIL
+{% endblock titulomenu %}
+
+{% block contenid %}  
+
+
+<center>
+        <h2>{{ obj }}</h2>
+        <h1>{{ lista }}</h1>
+    </center>
+    
+    <div class="row justify-content-center">
+        ({{request.user.username}})
+        
+    </div>
+   
+
+    {% endblock contenid%}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+Inventario Salones  
+{% endblock titulo%}
+
+{% block agregar %} 
+{% if request.user.is_authenticated and request.user.is_superuser %}
+  <a href="{% url 'agregar_sala' %}">Agregar_Sala</a>
+{% endif %}
+{% endblock agregar %} 
+
+
+{% block contenid %}              
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      
+      <th scope="col">Numero</th>
+      <th scope="col">Piso</th>
+      <th scope="col">Encargado</th>
+      <th scope="col">Facultad</th>
+      <th scope="col">Estado</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in lista %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        
+        <td>{{ x.numero }}</td>
+        <td>{{ x.piso }}</td>
+        <td>{{ x.encargado }}</td>
+        <td>{{ x.facultad }}</td>
+        <td>{{ x.status }}
+            {% if x.status == "False" %}
+            <p>ocupado</p>
+            {% endif %}
+          
+        </td>
+
+        
+        <!-- id=x.id -->
+        <td>
+          <a href="{% url 'ver_sala' id=x.id %}">Ver<div class="fas fa-search" ></div></a>
+          {% if request.user.is_authenticated and request.user.is_superuser %}
+            <a href="{% url 'editar_sala' id=x.id %}">Editar<div class="fas fa-edit" ></div></a>
+            <a href="{% url 'eliminar_sala' id=x.id %}">Eliminar<div class="fas fa-trash" ></div></a>
+            <a href="{% url 'desactivar_sala' id=x.id  %}">Desactivar <div class="fas fa-lock" ></div></a>
+          {% endif %}
+        </td> 
+        <td>
+          
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock contenid %}  

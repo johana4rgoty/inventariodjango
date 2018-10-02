@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+   salones  
+{% endblock titulo%}
+
+{% block titulomenu %}
+Ver Salones
+{% endblock titulomenu %}
+{% block contenid %}  
+<center>
+		
+	<h1>{{ lista }}</h1>
+</center>
+
+<div class="row justify-content-center">
+    <div class="card col-8">
+                  
+            <div class="col-4">
+                   
+                <p><strong>numero :</strong> {{ obj.numero }}</p>
+                <p><strong>piso : </strong>{{ obj.piso }}</p>
+                <p><strong>encargado : </strong>{{ obj.encargado }}</p>
+                <p><strong>facultad : </strong>{{ obj.facultad }}</p>
+                
+            
+        </div>
+    </div>
+</div>
+<center>
+    
+<a href="{% url 'lista_sala' %}">regresar a lista sala</a>
+</center>
+
+{% endblock contenid%}

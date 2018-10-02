@@ -1,0 +1,33 @@
+{% extends "inicio.html" %}
+
+{% block titulo %}
+	Registro
+{% endblock titulo %}
+<meta name="viewport" content="width=device-width"/>
+{% block titulomenu %}
+ REGISTRAR USUARIOS
+{% endblock titulomenu %}
+
+{% block textomenu %}
+                                                                                
+<div class="tab-content" id="nav-tabContent">
+		<div class="row" > 
+			<div class="col 6">
+				<div style="width:90%; height:90%">
+					<form action="" method="POST">
+							{% csrf_token %}
+							{{formulario.as_p}}
+							<input type="submit" name="Registrarse">
+						</form>
+					</div>	
+			</div>
+			
+		</div>
+
+		
+
+</div>
+
+	{% endblock textomenu %}
+
+

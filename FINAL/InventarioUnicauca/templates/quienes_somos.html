@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block titulo %}
+  sobre_nosotros
+{% endblock titulo%}
+
+{% block contenid%}
+{% load static %}
+
+<div  class="container">
+<center>
+    <h2  style="color:#cc0606;" >Sobre Nosotros</h2>
+</center>
+
+    <div class="row justify-content-center">
+        Fue adoptada por el Consejo Directivo de la Universidad del Cauca mediante el Acuerdo Nº 75 del 7 de noviembre de 1922, al conmemorarse el aniversario número 95 de fundación de la institución.
+
+        La bandera está conformada por doce barras azules y rojas de igual tamaño, alternadas y colocadas perpendicularmente al asta.
+        <img  src="{% static '/bandera2.png' %}" alt="My image" style="width:20rem; height:20rem" class="d-inline-block align-top" >
+        
+    </div>
+</div>    
+
+{% endblock contenid%}

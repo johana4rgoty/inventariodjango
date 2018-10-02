@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+   IP
+{% endblock titulo%}
+
+{% block titulomenu %}
+Inventario Ip
+{% endblock titulomenu %}
+
+{% block agregar %}   
+{% if request.user.is_authenticated and request.user.is_superuser %}
+  <a href="{% url 'agregar_ip' %}">Agregar_Ip</a>
+{% endif %}
+{% endblock agregar %} 
+
+{% block contenid %}  
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">id</th>
+      <th scope="col">numero</th>
+      <th scope="col">mascara</th>
+      <th scope="col">asignacion</th>      
+      <th scope="col">encargado</th>
+      <th scope="col">facultad</th>
+      <th scope="col">Estado</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in lista %}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ x.id }}</td>
+        <td>{{ x.ip_numero }}</td>
+        <td>{{ x.mascara }}</td>
+        <td>{{ x.asignacion }}</td>
+        <td>{{ x.encargado }}</td>
+        <td>{{ x.facultad }}</td>        
+        <td>{{ x.status }}</td>
+        
+      
+        <td>
+          <a href="{% url 'ver_ip' x.pk %}">ver<div class="fas fa-search" ></div></a>
+          {% if request.user.is_authenticated and request.user.is_superuser %}
+            <a href="{% url 'editar_ip' x.pk %}">editar<div class="fas fa-edit" ></div></a>
+            <a href="{% url 'eliminar_ip' x.pk %}">eliminar<div class="fas fa-trash" ></div></a>
+            <a href="{% url 'desactivar_ip' x.pk  %}">desactivar <div class="fas fa-lock" ></div></a>
+          {% endif %}
+        </td> 
+        <td>
+          
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock contenid %}  

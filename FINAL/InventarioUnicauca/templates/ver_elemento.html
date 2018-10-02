@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+   Elemento
+{% endblock titulo%}
+
+{% block contenid %}  
+<center>
+		
+	<h1>{{ obj }}</h1>
+</center>
+
+<div class="row justify-content-center">
+    <div class="card col-8">
+                  
+            <div class="col-4">
+     
+               <p><strong>UDC : </strong>{{ obj.UDC }}</p>
+                <p><strong>Nombre : </strong>{{ obj.nombre }}</p>
+                <p><strong>Material : </strong>{{ obj.material }}</p>
+                <p><strong>Encargado : </strong>{{ obj.encargado }}</p>
+                <p><strong>Decripcion : </strong>{{ obj.descripcion }}</p>
+                <p><strong>Facultad : </strong>{{ obj.facultad }}</p>
+                <p><strong>Departamento : </strong>{{ obj.departamento }}</p>
+                <p><strong>Foto : </strong>
+                  {% if obj.foto %}
+								<img src="/media/{{ obj.foto }}" width="60px">
+						    	{% endif %}                
+                </p>
+                <p><strong>Status : </strong>{{ obj.status }}</p>          
+                
+            
+        </div>
+    </div>
+</div>
+<center>
+    
+<a href="{% url 'lista_ip' %}">regresar a lista Dispositivo</a>
+</center>
+
+
+{% endblock contenid%}
+
+  
