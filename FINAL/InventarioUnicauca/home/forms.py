@@ -205,21 +205,44 @@ class agregar_usuario_form(forms.ModelForm):
 		
 
 
-# class Prestamo_Salon_form(forms.ModelForm):
-	
-
-# 	class Meta:
-# 		model  = Prestamo 
-# 		fields = '__all__'
-# 		widgets= {
+class Prestamo_Salon_form(forms.ModelForm):
+	class Meta:
+		model  = PrestamoSala 
+		fields = '__all__'
+		widgets= {
 			
-# 			'id_informe':forms.TextInput(attrs={'class':'form-control'}), 
-# 			'fecha_inicio':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
-# 			'fecha_fin':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
-		
-					 	
-# 					}
-# 		labels = {
-# 			'status':'Disponible', 
-# 		}
+			'id_informe':forms.TextInput(attrs={'class':'form-control'}), 
+			'fecha_inicio':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+			'fecha_fin':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+							 	
+					}
+		labels = {
+			'status':'Disponible', 
+		}
 
+class Prestamo_Dispositivo_form(forms.ModelForm):
+	class Meta:
+		model  = PrestamoDispositivo 
+		fields = '__all__'
+		widgets= {
+			
+			'id_informe':forms.TextInput(attrs={'class':'form-control'}), 
+			'fecha_inicio':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+			'fecha_fin':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+					}
+		labels = {
+			'status':'Disponible', 
+		}
+class Prestamo_Ip_form(forms.ModelForm):
+	class Meta:
+		model  = PrestamoIp 
+		fields = '__all__'
+		widgets= {
+			
+			'id_informe':forms.TextInput(attrs={'class':'form-control'}), 
+			'fecha_inicio':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+			'fecha_fin':forms.TextInput(attrs={'type':'date', 'class':'form-control'}), 
+					}
+		labels = {
+			'status':'Disponible', 
+		}

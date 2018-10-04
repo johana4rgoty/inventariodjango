@@ -423,18 +423,18 @@ def prestamosDispositivos_view(request):
     if request.user.is_authenticated and request.user.is_superuser:
 
         if request.method == 'POST':
-            formulario = Prestamo_Salon_form(request.POST, request.FILES)
+            formulario = Prestamo_Dispositivo_form(request.POST, request.FILES)
             if formulario.is_valid():
                 formulario.save()
-                return redirect('/principal/')
+                return redirect('/index/')
 
             else:
                 msj="hay datos no validos"
         else:
-            formulario = Prestamo_Salon_form()
+            formulario = Prestamo_Dispositivo_form()
         return render(request, 'prestamosDispositivos.html', locals())
     else:
-        return redirect('/principal/')  
+        return redirect('/index/')  
 
   
 
@@ -442,17 +442,17 @@ def prestamosIp_view(request):
     if request.user.is_authenticated and request.user.is_superuser:
 
         if request.method == 'POST':
-            formulario = agregar_usuario_form(request.POST, request.FILES)
+            formulario = Prestamo_Ip_form(request.POST, request.FILES)
             if formulario.is_valid():
                 formulario.save()
-                return redirect('/principal/')
+                return redirect('/index/')
             else:
                 msj="hay datos no validos"
         else:
-            formulario = agregar_usuario_form()
+            formulario = Prestamo_Ip_form()
         return render(request, 'agregar_usuario.html', locals())
     else:
-        return redirect('/principal/')  
+        return redirect('/index/')  
 
 def prestamosSalones_view(request): 
     if request.user.is_authenticated and request.user.is_superuser:
@@ -461,11 +461,11 @@ def prestamosSalones_view(request):
             formulario = Prestamo_Salon_form(request.POST, request.FILES)
             if formulario.is_valid():
                 formulario.save()
-                return redirect('/principal/')
+                return redirect('/index/')
             else:
                 msj="hay datos no validos"
         else:
             formulario = Prestamo_Salon_form()
-        return render(request, 'agregar_usuario.html', locals())
+        return render(request, 'prestamosSalones.html', locals())
     else:
-        return redirect('/principal/')                  
+        return redirect('/index/')                  

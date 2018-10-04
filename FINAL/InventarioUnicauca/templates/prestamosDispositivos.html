@@ -1,4 +1,4 @@
-{% extends "inicio.html" %}
+{% extends "base.html" %}
 
 {% block titulo %}
    agregar
@@ -23,7 +23,7 @@ Prestamo
                 <div class="center">
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-6 col-form-label"> Prestamo NRO:</label>
-                        <div class="col-sm-6">{{formulario.id_informe}} </div>
+                        <div class="col-sm-6">{{formulario.id}} </div>
                       </div>
                   
                 </div>
@@ -33,12 +33,7 @@ Prestamo
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
                       <div class="col-sm-10">{{formulario.id_pre_usuario}}</div>
                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword3" class="col-sm-2 col-form-label">Dependencia</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                      </div>
-                    </div>
+                    
                 </div>
                 <div>
                   <h5>Datos del Prestario:</h5>
@@ -46,12 +41,7 @@ Prestamo
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
                       <div class="col-sm-10">{{formulario.id_pre_usuario}}</div>
                     </div>
-                    <div class="form-group row">
-                      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                      </div>
-                    </div>
+                  
                 </div>
 
                 <div>
@@ -70,14 +60,12 @@ Prestamo
                       <div class="form-group row">
                           <label for="staticEmail" class="col-sm-2 col-form-label">Fecha Devolucion: </label>
                           <div class="col-sm-10">
-                            {{formulario.fecha_inicio}}
+                            {{formulario.fecha_fin}}
                           </div>
                         </div>
-
                   </div>
-
-                </div>              
-               
+                </div>          
+            
         
                 <table class="table">
                         <thead class="thead-dark">
@@ -92,27 +80,14 @@ Prestamo
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
+                            <td>{{formulario.id_pre_disp}}</td>
+                            <td>{{formulario.detalle}}</td>
+                            <td>{{formulario.cantidad}}</td>
+                            <td>{{formulario.status}}</td>
                           </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                          </tr>
+                     
                           
-        
+
                         </tbody>
                       </table>
                
@@ -125,7 +100,7 @@ Prestamo
     </form>
 </div>
 <center>
-    <a href="{% url 'lista_sala' %}">regresar a Usuario</a>
+    <a href="{% url 'index' %}">regresar Inicio</a>
 </center>
 
 {% endblock contenid%}

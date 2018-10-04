@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+   agregar
+{% endblock titulo%}
+
+{% block titulomenu %}
+Prestamo
+{% endblock titulomenu %}
+
+{% block contenid %}  
+<center>
+    <h2>{{ accion }}</h2>
+</center>
+
+<div class="container">
+    
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        
+                      
+                <div class="center">
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-6 col-form-label"> Prestamo NRO:</label>
+                        <div class="col-sm-6">{{formulario.id}} </div>
+                      </div>
+                  
+                </div>
+                <div>
+                  <h5> Datos del Responsable:</h5>
+                  <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+                      <div class="col-sm-10">{{formulario.id_pre_usuario}}</div>
+                   </div>
+                    
+                </div>
+                <div>
+                  <h5>Datos del Prestario:</h5>
+                  <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+                      <div class="col-sm-10">{{formulario.id_pre_usuario}}</div>
+                    </div>
+                  
+                </div>
+
+                <div>
+                  <h5> Datos del Prestamo: </h5>
+                </div>
+                <div class="row">
+                  <div class="col">
+                      <div class="form-group row">
+                          <label for="staticEmail" class="col-sm-2 col-form-label">Fecha Prestamo: </label>
+                          <div class="col-sm-10">
+                            {{formulario.fecha_inicio}}
+                          </div>
+                        </div>
+                  </div>
+                  <div class="col">
+                      <div class="form-group row">
+                          <label for="staticEmail" class="col-sm-2 col-form-label">Fecha Devolucion: </label>
+                          <div class="col-sm-10">
+                            {{formulario.fecha_fin}}
+                          </div>
+                        </div>
+                  </div>
+                </div>          
+            
+        
+                <table class="table">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#nro</th>
+                            <th scope="col">codigo</th>
+                            <th scope="col">detalle</th>
+                            <th scope="col">cantidad</th>
+                            <th scope="col">estado</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>{{formulario.id_pre_ip}}</td>
+                            <td>{{formulario.detalle}}</td>
+                            <td>{{formulario.cantidad}}</td>
+                            <td>{{formulario.status}}</td>
+                          </tr>
+                     
+                          
+
+                        </tbody>
+                      </table>
+               
+             
+        
+                <input class="btn btn-primary" type="submit" name="Agregar" value="Guardar Cambios">	        
+        </div>
+
+        
+    </form>
+</div>
+<center>
+    <a href="{% url 'index' %}">regresar Inicio</a>
+</center>
+
+{% endblock contenid%}

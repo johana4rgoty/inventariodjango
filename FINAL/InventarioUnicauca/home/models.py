@@ -84,53 +84,47 @@ class Dispositivo (models.Model):
         return str(self.nombre)
 
 # class Prestamo (models.Model):
-   
 #     fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
 #     fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
 #     id_pre_sala = models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
-#     id_pre_disp = models.ForeignKey(Dispositivo, on_delete=models.PROTECT, null=True) 
-#     id_pre_ip = models.ForeignKey(Ip, on_delete=models.PROTECT, null=True)  
 #     id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
 #     status = models.BooleanField(default=True)
-#     detalle=models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
-#     nombre=models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
 #     def __str__(self):
 #         return str(self.id)
+   
 
-# class PrestamoSala (models.Model):
-#     id_informe = models.IntegerField()
-#     fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
-#     fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
-#     id_pre_sala = models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
-#     detalle=models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
-#     id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
-#     status = models.BooleanField(default=True)
-#     def __str__(self):
-#         return str(self.id_informe)
+class PrestamoSala (models.Model):
+    fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
+    fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
+    id_pre_sala = models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
+    id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
+    status = models.BooleanField(default=True)
+    detalle =  models.CharField(max_length=100, null=True)
+    cantidad =  models.CharField(max_length=100, null=True)
+    def __str__(self):
+        return str(self.id)
 
-# class PrestamoIp (models.Model):
-#     id_informe = models.IntegerField()
-#     fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
-#     fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
-#     id_pre_ip = models.ForeignKey(Ip, on_delete=models.PROTECT, null=True)  
-#     id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
-#     status = models.BooleanField(default=True)
-#     def __str__(self):
-#         return str(self.id_informe)
+class PrestamoIp (models.Model):
+    fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
+    fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
+    id_pre_ip = models.ForeignKey(Ip, on_delete=models.PROTECT, null=True)  
+    id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
+    status = models.BooleanField(default=True)
+    detalle =  models.CharField(max_length=100, null=True)
+    cantidad =  models.CharField(max_length=100, null=True)
+    def __str__(self):
+        return str(self.id)
   
-    
-
-# class PrestamoDispositivo (models.Model):
-#     id_informe = models.IntegerField()
-#     fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
-#     fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
-#     id_pre_sala = models.ForeignKey(Sala, on_delete=models.PROTECT, null=True) 
-#     id_pre_disp = models.ForeignKey(Dispositivo, on_delete=models.PROTECT, null=True) 
-#     id_pre_ip = models.ForeignKey(Ip, on_delete=models.PROTECT, null=True)  
-#     id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
-#     status = models.BooleanField(default=True)
-#     def __str__(self):
-#         return str(self.id_informe)
+class PrestamoDispositivo (models.Model):
+    fecha_inicio= models.DateField(auto_now=False, auto_now_add=False)         
+    fecha_fin= models.DateField(auto_now=False, auto_now_add=False) 
+    id_pre_disp = models.ForeignKey(Elemento, on_delete=models.PROTECT, null=True) 
+    id_pre_usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT, null=True)  
+    status = models.BooleanField(default=True)
+    detalle =   models.CharField(max_length=100, null=True)
+    cantidad =  models.CharField(max_length=100, null=True)
+    def __str__(self):
+        return str(self.id)
 
 
 

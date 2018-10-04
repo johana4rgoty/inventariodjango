@@ -132,19 +132,16 @@
               <span>Usuario</span></a>
             <div class="dropdown-menu  text-white ">
               <a class="dropdown-item" href="{% url 'lista_usuario' %}">Listar Usuarios</a>
-              <a class="dropdown-item" href="{% url 'agregar_estudiante' %}">Agregar_Estudiante</a>
-              <a class="dropdown-item" href="{% url 'agregar_profesores' %}">Agregar_Profesores</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'agregar_usuario' %}">Administradores<</a>
+      
             </div>
           </li>
-           <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-table"></i>
               <span>Prestamos</span></a>
             <div class="dropdown-menu  text-white ">
-              <a class="dropdown-item" href="{% url 'lista_usuario' %}">Salones</a>
-              <a class="dropdown-item" href="{% url 'agregar_estudiante' %}">Dispositivos</a>
+              <a class="dropdown-item" href="{% url 'prestamosSalones' %}">Salones</a>
+              <a class="dropdown-item" href="{% url 'prestamosDispositivos' %}">Dispositivos</a>
               <a class="dropdown-item" href="{% url 'agregar_profesores' %}">Ip</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Otros</a>
@@ -155,11 +152,11 @@
               <i class="fa fa-cog fa-spinner fa-spin "></i>
               <span>Configuracion</span></a>
             <div class="dropdown-menu  text-white ">
-              <a class="dropdown-item" href="{% url 'lista_usuario' %}}">Listar Usuarios</a>
+              <a class="dropdown-item" href="{% url 'lista_usuario' %}}"></a>
               <a class="dropdown-item" href="{% url 'agregar_estudiante' %}">Agregar_Estudiante</a>
               <a class="dropdown-item" href="{% url 'agregar_profesores' %}">Agregar_Profesores</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'agregar_usuario' %}">Administradores</a>
+              <a class="dropdown-item" href="{% url 'agregar_usuario' %}">Administradores<</a>
             </div>
           </li>
       </ul>
