@@ -25,8 +25,8 @@ SECRET_KEY = 'dp4#p!(2e95daep+7*@g-v$sn)^0y9z@t7#_y^_v+0d^hd_5yj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['inventariodjango4102018.herokuapp.com']
 
 # Application definition
 
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'gunicorn',
+    'psycopg2',
    
     
 
