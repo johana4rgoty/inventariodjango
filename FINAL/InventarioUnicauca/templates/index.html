@@ -138,6 +138,18 @@
               <a class="dropdown-item" href="{% url 'agregar_usuario' %}">Administradores<</a>
             </div>
           </li>
+           <li class="nav-item dropdown">
+            <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fa fa-table"></i>
+              <span>Prestamos</span></a>
+            <div class="dropdown-menu  text-white ">
+              <a class="dropdown-item" href="{% url 'lista_usuario' %}">Salones</a>
+              <a class="dropdown-item" href="{% url 'agregar_estudiante' %}">Dispositivos</a>
+              <a class="dropdown-item" href="{% url 'agregar_profesores' %}">Ip</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Otros</a>
+            </div>
+          </li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa fa-cog fa-spinner fa-spin "></i>
@@ -236,7 +248,7 @@
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
+              Inventario 2018</div>
             <div class="card-body">
               <canvas id="myAreaChart" width="100%" height="30"></canvas>
             </div>

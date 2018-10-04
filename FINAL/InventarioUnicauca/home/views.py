@@ -4,9 +4,10 @@ from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
 
-
+@login_required(login_url='/login/')	
 def inicio_view(request):
     return render(request, 'inicio.html', locals())
+@login_required(login_url='/login/')	    
 def index_view(request):
     return render(request, 'index.html', locals())
 def logout_view(request):
@@ -27,6 +28,7 @@ def login_view(request):
 				msj = 'No se pudo iniciar sesión'   
 	formulario=login_form()
 	return render(request, 'login.html', locals())
+@login_required(login_url='/login/')	    
 def quienes_somos_view(request):
 	nombre = [12,3,45,67,89,436,51]
 	#return render(request, 'quienes_somos.html', {'n':nombre})
@@ -34,7 +36,7 @@ def quienes_somos_view(request):
 # Create your views here.
 
 #**********************************viewtempl*********************************************
-
+@login_required(login_url='/login/')	
 def contactenos_view(request):
     email=""
     subject=""
@@ -110,9 +112,6 @@ def register_view(request):
 
 def thanks_for_register_view(request):
 	return render (request, 'register.html', locals())    
-
-
-
 
 def editar_producto_view(request,  id_prod):
     obj= producto.objects.get(id = id_prod)
